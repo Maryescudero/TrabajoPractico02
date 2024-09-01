@@ -9,17 +9,17 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class MainViewModel extends ViewModel {
-
     private final MutableLiveData<List<Libro>> librosLiveData = new MutableLiveData<>();
     private List<Libro> allLibros = new ArrayList<>();
 
     public MainViewModel() {
-        // Inicializa la lista de libros. Aquí puedes agregar datos de ejemplo o cargar desde una fuente de datos.
-        allLibros.add(new Libro("El Principito", "Antoine de Saint-Exupéry", 96, 1943, "Fábula", "Literatura infantil", R.drawable.principito, "El Principito es una obra clásica de Antoine de Saint-Exupéry que narra la historia de un joven príncipe que viaja de un planeta a otro. A través de sus encuentros con diversos personajes, el Principito explora temas profundos como la amistad, el amor y la búsqueda del significado de la vida. El libro es conocido por sus ilustraciones encantadoras y su mensaje atemporal, que resuena tanto en adultos como en niños."));
-        allLibros.add(new Libro("Juego de Tronos", "George R.R. Martin", 694, 1996, "Fantasia épica", "Novela épica", R.drawable.got, "Juego de Tronos es la primera novela de la serie 'Canción de Hielo y Fuego' escrita por George R.R. Martin. Ambientada en los reinos ficticios de Westeros y Essos, la historia se centra en la lucha por el trono del continente. Con una intrincada trama de conspiraciones políticas, traiciones y batallas épicas, la novela presenta un elenco de personajes complejos y una narrativa rica en detalles. La serie es conocida por su atmósfera oscura, realismo brutal y la creación de un mundo fascinante y complejo."));
-        allLibros.add(new Libro("El Hobbit", "J.R.R. Tolkien", 310, 1937, "Fantasía", "Aventura épica", R.drawable.hobbit, "El Hobbit es una novela de fantasía escrita por J.R.R. Tolkien. La historia sigue a Bilbo Baggins, un hobbit que disfruta de una vida tranquila en la Comarca. Su vida cambia drásticamente cuando el mago Gandalf y una compañía de enanos lo reclutan para una aventura épica para recuperar su hogar y tesoro robado por el dragón Smaug. A lo largo de su viaje, Bilbo enfrenta peligros, descubre nuevos mundos y encuentra coraje dentro de sí mismo. La novela es conocida por su narrativa encantadora, personajes memorables y la creación de un universo rico y detallado."));
-        // Agrega más libros según sea necesario
-        librosLiveData.setValue(new ArrayList<>(allLibros)); // Inicializa con todos los libros
+        // Inicializa la lista con datos de ejemplo
+        allLibros.add(new Libro("El Hobbit", "J.R.R. Tolkien", 310, 1937, "Fantasía", "Aventura", R.drawable.hobbit, "Una aventura épica en la Tierra Media, siguiendo al hobbit Bilbo Baggins mientras emprende una búsqueda para recuperar un tesoro custodiado por el dragón Smaug."));
+        allLibros.add(new Libro("Juego de Tronos", "George R.R. Martin", 694, 1996, "Fantasía", "Épico", R.drawable.got, "Primer libro de la serie 'Canción de Hielo y Fuego', que introduce un complejo mundo de intrigas políticas, conflictos y luchas por el poder en los Siete Reinos de Westeros."));
+        allLibros.add(new Libro("El Principito", "Antoine de Saint-Exupéry", 96, 1943, "Fábula", "Filosófica", R.drawable.principito, "Un cuento poético y filosófico que narra las aventuras de un pequeño príncipe que viaja a través de varios planetas y aprende lecciones sobre la vida, el amor y la amistad."));
+
+        // Inicializa con todos los libros
+        librosLiveData.setValue(new ArrayList<>(allLibros));
     }
 
     public LiveData<List<Libro>> getLibros() {
